@@ -2,7 +2,7 @@
   "name": "introduccion-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://FabriJuncal.github.io/introduccion-react",
+  "homepage": "https://fabrijuncal.github.io/introduccion-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
