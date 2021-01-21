@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# INSTALAR ENTORNO DE MANERA RAPIDA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1) Instalar Chocolatey
+https://chocolatey.org/
 
-## Available Scripts
+Desde la consola con los permisos de administrador ejecutar los siguientes comandos:
 
-In the project directory, you can run:
+a) Ejecutar el siguiente comando: Get-ExecutionPolicy
+normalmente se muestra por pantalla "Restricted", si muestra el siguiente resultado "AllSigned", omitir este proceso
+y pasar al paso 1d.
 
-### `npm start`
+b) Ejecutar el siguiente comando: Set-ExecutionPolicy AllSigned
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+c) Volver a ejecutar este comando: Get-ExecutionPolicy
+Ahora deberá mostrar por pantalla "AllSigned"
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+d) Pegar el siguiente codigo en la consola:
 
-### `npm test`
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+e) Ejecutar el siguiente comando en consola:
 
-### `npm run build`
+choco -v
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Con esto nos debería mostrar la versión de Chocolatey y ya lo tendriamos instalado en nuestra maquina
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 2) Instalar el entorno de Node.js en nuestro equipo utilizando Chocolatey.
+Ingresar el siguiente comando en la consola con derechos de administraro:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+choco install nodejs
 
-### `npm run eject`
+## 3) Cerrar la consola, volver abrirla y luego ejecutar los siguientes comandos para verificar que se halla instalado correctamente node.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+node -v
+npm -v
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 4) Pasaremos a baja el repositorio, para esto nos tendremos que ubicar en un lugar donde querramos que se descarguen los archivos.
+Luego ejecutar el siguiente comando en consola:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+git clone https://github.com/FabriJuncal/introduccion-react.git
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 5) Una vez descargado el repositorio nos ubicamos dentro del proyecto con el comando:
 
-## Learn More
+cd introduccion-react
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 6) Una vez que estemos ubicados en el proyecto, descargamos las dependencias con el comando:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install dependencies
 
-### Code Splitting
+## 7) Corremos el proyecto con el comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm start
 
-### Analyzing the Bundle Size
+Se abrirá una ventana del navegador predeterminado con el proyecto corriendo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# SUBIR CAMBIOS A GIT PAGES
 
-### Making a Progressive Web App
+Para subir y desplegar el sitio web a "Git Pages" (Un hosting gratuito para proyectos front-end) de "GitHub"
+Utilizamos el paquete "gh-pages" que lo instalamos con NPM, haciendo uso del siguiente comando:
+https://www.npmjs.com/package/gh-pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npm i gh-pages
 
-### Advanced Configuration
+Una vez instalado el paquete, configuramos el archivo "package.json"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 1) Encima del campo "dependencies" agregamos el campo "homepage" con la dirección URL de donde será subido y desplegado el proyecto
+## 2) Dentro del campo "scripts" agregamos un campo llamado "predeploy" que ejecutará el siguiente comando : "npm run build"
+## 3) Dentro del campo "scripts" agregamos un campo llamado "deploy" que ejecutará el siguiente comando : "gh-pages -d build" 
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Luego ejecutamos en consola el comando "npm run deploy" y se ejecutarán los comandos creados anteriormente en el archivo "package.json".
+Esto desplegará el sitio desarrollado con react en el hosting gratuito de github de manera automatica.
+Siendo un poco mas tecnico, creará la rama "gh-pages", luego ejecutará el comando "npm run build" para crear la version optimisada del proyecto.
