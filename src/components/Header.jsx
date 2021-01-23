@@ -1,5 +1,6 @@
 
-// Creamos el componente, por lo general es una funcion con un return que retorna etiquetas.
+// Creamos el componente haciendo uso una función de tipo "Function Declaration", 
+// por lo general es una funcion con un return que retorna etiquetas.
 function Header(){
 
     // // 1) Logica antes de retornar las etiquetas
