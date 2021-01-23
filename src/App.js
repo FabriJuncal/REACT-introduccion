@@ -1,9 +1,10 @@
 // Importamos la libreria "Fragment" que viene con React para poder utilizar los beneficios
 // de la etiqueta/componente <Fragment></Fragment>
 import React, {Fragment, useState} from "react";
-// Importamos el componente
+// Importamos los Componente
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Producto from './components/Producto';
 
 function App() {
 
@@ -28,6 +29,16 @@ const [productos, guardarProductos] = useState([
           {/* Utilizamos los componentes creado */}
           {/*Enviamos los PROPS como si asignaramos valores a un atributo de una etiqueta (por ejemplo los props "titulo" y "fecha")*/}
           <Header titulo="Tienda Virtual"/>
+
+          <h1>Lista de Productos</h1>
+          {/*.map() es la funcion que se utiliza mas en React para recorrer objetos/array, por eso lo utilizamos.
+             No utiliamos los corchetes en el .map() ya que los parentecis () dan por implicito que se retornará los valores que se encuentren dentro.*/}
+          {productos.map(producto => (
+            <Producto 
+              key={producto.id} // Enviamos un PROPS con el atributo "key", por que sino nos tira un error por consola por no enviar un elemento unico.
+              producto={producto}
+            />
+          ))}
 
           {/*A continuación se muestra un ejemplo de como envíar un valor como props utilizando una variable y sintaxis JS*/}
           <Footer fecha={fecha}/>
