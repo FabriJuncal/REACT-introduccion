@@ -12,12 +12,18 @@ function App() {
 const fecha = new Date().getFullYear();
 
 // Creamos listado de productos utilizando la función "useStates"
+// Creamos un array con "destructuring" y el 1er parametro obtendra los valores del "useState" y el 2do será la función que modifique a este.
 const [productos, guardarProductos] = useState([
   { id: 1, nombre: 'Camisa ReactJS', precio: 50},
   { id: 2, nombre: 'Camisa VueJS', precio: 50},
   { id: 3, nombre: 'Camisa Node.js', precio: 50},
   { id: 4, nombre: 'Camisa Angular', precio: 50},
 ]);
+
+// Creamos el Carrito utilizando la función "useStates"
+// Creamos un array con "destructuring" y el 1er parametro obtendra los valores del "useState" y el 2do será la función que modifique a este.
+// Siempre se tiene que agregar un valor para inicialisar el "useState", puede contener datos o valores de inicio como por ejemplo: "{}", "[]", '', 0, false
+const [carrito, agregarProducto] = useState([])
 
 // ============================================================================================================================================
 
@@ -37,6 +43,9 @@ const [productos, guardarProductos] = useState([
             <Producto 
               key={producto.id} // Enviamos un PROPS con el atributo "key", por que sino nos tira un error por consola por no enviar un elemento unico.
               producto={producto}
+              productos={productos}
+              carrito={carrito}
+              agregarProducto={agregarProducto} // Pasamos por PROPS la función  del "useState" que modificará el carrito
             />
           ))}
 
