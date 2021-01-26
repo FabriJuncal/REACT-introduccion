@@ -11,7 +11,14 @@ const Producto = ({producto, carrito, agregarProducto, productos}) => {
         // .filter(): Es un "array method" parecido al .map(), ya que este tambien itera sobre el array y crea uno nuevo.
         // La diferencia de .filter() de .map(), es que .filter() filtrará los elementes del array según el parametro que le pasemos.
         const producto = productos.filter( producto => producto.id === id)[0];
-        console.log(producto);
+        // agregarProducto(): Es la función del "useState" para modificar los elementos del array "carrito"
+        // Utilizamos la sintaxis de "..." llamado "Spread Operator" para clonar el array "carrito"
+        // Le pasamos como 1er parametro un array con la copia del array "carrito"
+        // para que persistan los datos que le vayamos pasando en el 2do parametro
+        agregarProducto([
+            ...carrito, 
+            producto
+        ]);
     }
 
     return ( 

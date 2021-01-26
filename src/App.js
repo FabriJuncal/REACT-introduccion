@@ -13,6 +13,8 @@ const fecha = new Date().getFullYear();
 
 // Creamos listado de productos utilizando la función "useStates"
 // Creamos un array con "destructuring" y el 1er parametro obtendra los valores del "useState" y el 2do será la función que modifique a este.
+// RECORDAR: no se puede modificar los valores que contenga un "useState" sobrescribiendo los valores, se tiene que utilizar la función
+//           que le pasamos como 2do parametro
 const [productos, guardarProductos] = useState([
   { id: 1, nombre: 'Camisa ReactJS', precio: 50},
   { id: 2, nombre: 'Camisa VueJS', precio: 50},
@@ -23,6 +25,8 @@ const [productos, guardarProductos] = useState([
 // Creamos el Carrito utilizando la función "useStates"
 // Creamos un array con "destructuring" y el 1er parametro obtendra los valores del "useState" y el 2do será la función que modifique a este.
 // Siempre se tiene que agregar un valor para inicialisar el "useState", puede contener datos o valores de inicio como por ejemplo: "{}", "[]", '', 0, false
+// RECORDAR: no se puede modificar los valores que contenga un "useState" sobrescribiendo los valores, se tiene que utilizar la función
+//           que le pasamos como 2do parametro
 const [carrito, agregarProducto] = useState([])
 
 // ============================================================================================================================================
