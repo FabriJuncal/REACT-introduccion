@@ -5,6 +5,7 @@ import React, {Fragment, useState} from "react";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Producto from './components/Producto';
+import Carrito from './components/Carrito';
 
 function App() {
 
@@ -45,13 +46,17 @@ const [carrito, agregarProducto] = useState([])
              No utiliamos los corchetes en el .map() ya que los parentecis () dan por implicito que se retornará los valores que se encuentren dentro.*/}
           {productos.map(producto => (
             <Producto 
-              key={producto.id} // Enviamos un PROPS con el atributo "key", por que sino nos tira un error por consola por no enviar un elemento unico.
-              producto={producto}
-              productos={productos}
-              carrito={carrito}
-              agregarProducto={agregarProducto} // Pasamos por PROPS la función  del "useState" que modificará el carrito
+                key={producto.id} // Enviamos un PROPS con el atributo "key", por que sino nos tira un error por consola por no enviar un elemento unico.
+                producto={producto}
+                productos={productos}
+                carrito={carrito}
+                agregarProducto={agregarProducto} // Pasamos por PROPS la función  del "useState" que modificará el carrito
             />
           ))}
+
+          <Carrito 
+              carrito={carrito}
+          />
 
           {/*A continuación se muestra un ejemplo de como envíar un valor como props utilizando una variable y sintaxis JS*/}
           <Footer fecha={fecha}/>
