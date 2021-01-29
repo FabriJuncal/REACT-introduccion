@@ -56,6 +56,7 @@ const [carrito, agregarProducto] = useState([])
 
           <Carrito 
               carrito={carrito}
+              agregarProducto={agregarProducto} // Pasamos por PROPS la función  del "useState" que modificará el carrito
           />
 
           {/*A continuación se muestra un ejemplo de como envíar un valor como props utilizando una variable y sintaxis JS*/}

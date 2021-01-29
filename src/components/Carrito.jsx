@@ -4,7 +4,7 @@ import './Carrito.css';
 import Producto from './Producto';
 
 // Definimos el componente dando por implicito el "return" por lo tanto sacamos el "return" y las "{}", dejando solo los "()"
-const Carrito = ({carrito}) =>  ( 
+const Carrito = ({carrito, agregarProducto}) =>  ( 
     <div className="carrito">
         <h2>Tu Carrito de Compras</h2>
 
@@ -21,6 +21,8 @@ const Carrito = ({carrito}) =>  (
                 <Producto 
                     key={producto.id} // Enviamos un PROPS con el atributo "key", por que sino nos tira un error por consola por no enviar un elemento unico.
                     producto={producto}
+                    carrito={carrito}
+                    agregarProducto={agregarProducto} // Pasamos por PROPS la función  del "useState" que modificará el carrito
                 />
             ))
         }
