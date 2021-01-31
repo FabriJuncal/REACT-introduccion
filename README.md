@@ -66,10 +66,14 @@ npm i gh-pages
 Una vez instalado el paquete, configuramos el archivo "package.json"
 
 ### 1) Encima del campo "dependencies" agregamos el campo "homepage" con la dirección URL de donde será subido y desplegado el proyecto
+Ej: ```"homepage": "https://fabrijuncal.github.io/introduccion-react/"```
 ### 2) Dentro del campo "scripts" agregamos un campo llamado "predeploy" que ejecutará el siguiente comando : ```npm run build```
+Ej: ```"predeploy": "npm run build"```
 ### 3) Dentro del campo "scripts" agregamos un campo llamado "deploy" que ejecutará el siguiente comando : ```gh-pages -d build```
+Ej: ```"deploy": "gh-pages -d build"```
 ### 4) Luego ejecutamos en consola el comando ```npm run deploy``` y se ejecutarán los comandos creados anteriormente en el archivo **"package.json"**.
 
 Esto desplegará el sitio desarrollado con react en el hosting gratuito de github de manera automatica.
 Siendo un poco mas tecnico, creará la rama **"gh-pages"** (es la rama que utilizará el hosting), luego ejecutará el comando ```npm run build``` para crear la version optimisada del proyecto.
 Y con esto tendríamos nuestro proyecto subido en el hosting gratuito y con la ultima versión.
+
