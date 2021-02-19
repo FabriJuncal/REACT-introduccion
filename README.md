@@ -39,11 +39,11 @@ npm -v
 ## 4) Pasaremos a bajar el repositorio, para esto nos tendremos que ubicar en un lugar donde querramos que se descarguen los archivos.
 Luego ejecutar el siguiente comando en consola:
 ```
-git clone https://github.com/FabriJuncal/introduccion-react.git
+git clone https://github.com/FabriJuncal/REACT-introduccion.git
 ```
 ## 5) Una vez descargado el repositorio nos ubicamos dentro del proyecto con el comando:
 ```
-cd introduccion-react
+cd REACT-introduccion
 ```
 ## 6) Una vez que estemos ubicados en el proyecto, descargamos las dependencias con el comando:
 ```
