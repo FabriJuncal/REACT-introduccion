@@ -3,7 +3,7 @@
 ## 1) Instalar Chocolatey
 Pagina Oficial: https://chocolatey.org/
 
-Desde la consola con los permisos de administrador ejecutar los siguientes comandos:
+Desde la consola PowerShell con los permisos de administrador ejecutar los siguientes comandos:
 
 a) Ejecutar el siguiente comando: ```Get-ExecutionPolicy```
 normalmente se muestra por pantalla **"Restricted"**, si muestra el siguiente resultado **"AllSigned"**, omitir este proceso
