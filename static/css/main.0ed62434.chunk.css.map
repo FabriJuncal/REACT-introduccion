@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/Carrito.css"],"names":[],"mappings":"AAAA,SACI,cAAe,CACf,KAAM,CACN,OAAQ,CACR,qBAAuB,CACvB,WACJ","file":"main.0ed62434.chunk.css","sourcesContent":[".carrito{\r\n    position: fixed;\r\n    top: 0;\r\n    right: 0;\r\n    background-color: white;\r\n    width: 400px;\r\n}"]}
