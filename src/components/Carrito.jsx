@@ -1,5 +1,6 @@
+import React from 'react';
 // Importamos las Clases CSS
-import './Carrito.css';
+import './Carrito/css/Carrito.css';
 // Importamos un Componente para reutilizarlo
 import Producto from './Producto';
 

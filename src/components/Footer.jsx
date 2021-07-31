@@ -1,3 +1,5 @@
+import React from 'react';
+
 
 // "TIPO DE FUNCIONES" PARA CREAR UN COMPONENTE
 

@@ -1,4 +1,4 @@
-
+import React from 'react';
 // Utilizamos sintaxis llamada "Destructuring" para obtener el producto del PROPS y
 // no tener que utilizar la sintaxis de puntos, por ej: props.producto.nombre
 const Producto = ({producto, carrito, agregarProducto, productos}) => {
